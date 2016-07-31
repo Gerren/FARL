@@ -229,7 +229,7 @@ function moveRail(rail, direction, distance)
     local off = data[rail.direction] and data[rail.direction] or { x = 0, y = 0 }
     local pos = addPos(off, rail.position)
     pos = pos12toXY(moveposition(fixPos(pos), direction, distance))
-    local newRail = { name = rail.name, type = rail.type, direction = rail.direction, position = pos, force = game.players[1].force }
+    local newRail = { name = rail.name, type = rail.type, direction = rail.direction, position = pos, force = rail.force }
     if rail.type == "straight-rail" and rail.direction % 2 == 1 and distance % 2 == 1 then
         newRail.direction = (rail.direction + 4) % 8
     end
